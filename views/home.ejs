@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <!-- General Meta Data to identify the Device Height & Width and Encoding -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- CDN for FontAwesom  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <!-- CSS file for Todo page  -->
+        <link rel="stylesheet" href="css/home_style.css">
+        
+    </head>
+    <body>
+        
+        <!-- Entire Todo app Container -->
+        <div id="container">
+
+            <!-- Heading for the Application -->
+            <header>
+                <h1>TODO App</h1>
+            </header>
+            <hr>
+            
+            <!-- Form handiling For storing Data into the Database -->
+            <form action="" method="get" id="form">
+
+                <!-- Description About the Task -->
+                <div id="Description">
+
+                    <!-- Label For the User to identify the Field -->
+                    <label for="description">Description</label>
+                    <input type="search" name="description" placeholder="What do you need to do?">
+                
+                </div>
+                <hr>
+                
+                <!-- Task Due Date and Category information  -->
+                <div id="cards">
+                
+                    <!-- Task Category div Element -->
+                    <div style="flex-grow: 1;" id="Category">
+                        <label for="category">CATEGORY</label>
+
+                        <select name="category">
+                        <option value="">Choose a Category</option>
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="School">School</option>
+                        <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <hr>
+                    &nbsp;&nbsp;
+
+                    <!-- Date Information about the Task -->
+                    <div id="date">
+                        <label for="date">Due Date</label>
+                        <input type="date"  id="birthday" name="date">
+                    </div>
+                </div>
+                <hr>
+
+                <!-- Button To send the data to the Express Server and Storing into the HTML -->
+                <div class="buttons">
+                    <button type="submit" class="add"> <i class="fa-solid fa-plus"></i>&nbsp;<span>ADD TASK</span> </button>
+                 </div>
+                <hr>
+            </form>
+            
+
+            <!-- Iterate over the Database and Updating Todo List into the Browser -->
+           
+            <% for(i of Todo_List){%> 
+                
+            <div class="result">   
+                <div>
+                    <a href="/check-state?id=<%= i.id%>"><input class="check" type="checkbox" name="checkbox" <%= i.checked %>/>
+                        <p class="des"><%= i.description%></p>
+                    </a>
+                    
+                </div>
+                <i class="date fa-solid fa-calendar-days">&nbsp;&nbsp; <span class="date_size" value="checked"><%= new Date(i.date).toDateString() %></span></i>
+                <button class="category_Btn <%=i.category%>" type="button"><%= i.category %></button>
+                <hr>
+                <a href="/delete?id=<%= i.id%>" ><i class="x-mark fa-solid fa-xmark"></i></a>
+            </div>
+            <%}%>
+                
+        </div>
+
+        <!-- Scripts File Declaration -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
