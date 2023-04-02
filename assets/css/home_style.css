@@ -114,19 +114,26 @@ select , #Date > input , select > option {
     text-decoration-style: solid;
     opacity: 0.5;
 }
+.deleteAll{
+    background-color: rgb(238, 53, 30);
+}
 
 .add{
     background-color: rgb(68, 68, 68);
    
 }
-.add >i, .delete > i{
+.add >i, .delete > i , .deleteAll > i{
     margin-right: 5%;
     font-size: 90%;
-    font-weight: 500;
 }
 .delete{
     background-color: rgb(238, 53, 30);
    
+}
+
+.deleteAll > a{
+    text-decoration: none;
+    color:white;
 }
 
 
