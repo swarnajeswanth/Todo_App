@@ -2,7 +2,19 @@
 Basic Todo application with Express and MongoDB
 
 
-![image](https://user-images.githubusercontent.com/41503134/227735134-54e5e6d8-31b3-43b5-963c-752bcedd12e4.png)
+![Todo_snap](https://user-images.githubusercontent.com/41503134/229378234-461fb57e-ba8b-4350-b0e9-c3249c3322c5.png)
+
+
+IMP Instructions:
+
+    # For an Todo Item to be checked and store in DB . use/click on the  "List description"
+    # It is the Most critical part for "DeleteAll" button to work , in the way it is meant to be 
+    # It will useful to identify the checked Items while restarting the Project
+
+    # i have created a script for "nodemon index.js " to start . So you can use " npm start " for running the Project
+    # For DeleteAll Button to work . Click on the "DeleteAll" button
+
+
 
 
 Implementation:
